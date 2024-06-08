@@ -2,11 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
+
     {{--  slider section  --}}
     @include('sections.slider')
     {{--  end section slider  --}}
-
-    {{--  section about  --}}
+        {{--  section about  --}}
     @include('sections.about')
     {{--  end section about  --}}
 
@@ -38,5 +38,6 @@
     {{--  section testimonial  --}}
     @include('sections.testimonial')
     {{--  end testimonial section  --}}
+
 @endsection
 

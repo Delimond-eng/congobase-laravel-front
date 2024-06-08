@@ -1,16 +1,14 @@
+@inject('translateService', 'App\Services\GoogleTranslateService')
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="DynamicLayers">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-     <script>
-        var setLanguageUrl = "{{ route('translate') }}";
-    </script>
 
-    <title>CongoBase ONG</title>
+    <title>CongoBase ONG | @if($title) {{ $translateService->translate($title, app()->getLocale()) }} @endif</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logos/favicon.ico">
 
@@ -90,6 +88,8 @@
 
     {{-- Include header component --}}
     @include('components.header')
+
+    <div class="header-height"></div>
 
 
     {{-- End header component --}}
